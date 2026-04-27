@@ -66,7 +66,6 @@ The wording varies slightly, but the meaning is identical. This indicates that q
 
 ### 2. Why is INT8 *slower* than NF4 — despite being higher precision?
 
-This is counterintuitive and worth explaining:
 
 **bitsandbytes LLM.int8() (INT8)** uses *mixed-precision decomposition*:
 - It detects outlier weight columns (typically ~0.1% of columns) and keeps those in FP16.
