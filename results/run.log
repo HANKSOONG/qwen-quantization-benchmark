@@ -1,0 +1,111 @@
+PyTorch : 2.5.1
+GPU     : NVIDIA RTX A6000
+VRAM    : 47.4 GB
+Model   : Qwen/Qwen2.5-7B-Instruct
+
+============================================================
+  Loading BF16
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:01,  1.60it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.70it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:01<00:00,  1.72it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.54it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.59it/s]
+Load time : 3.9s
+VRAM      : 14.19 GB
+
+--- Prompt 1/3 ---
+  Explain neural network quantization in simple terms.
+  Tokens    : 200
+  Elapsed   : 5.05s
+  Throughput: 39.6 tok/s
+  Response  :
+    Sure! Neural network quantization is a technique used to make neural networks smaller and faster without significantly compromising their performance. Here’s a simple explanation:
+
+Imagine you have a ...
+
+--- Prompt 2/3 ---
+  Describe the trade-off between memory usage, latency, and output quality in depl...
+  Tokens    : 200
+  Elapsed   : 5.04s
+  Throughput: 39.7 tok/s
+  Response  :
+    In deployment-oriented machine learning systems, there is often a trade-off between memory usage, latency, and output quality. These three factors are interrelated and optimizing one can sometimes com...
+
+--- Prompt 3/3 ---
+  You are optimizing a model for real-time perception on an edge device. Explain w...
+  Tokens    : 200
+  Elapsed   : 5.04s
+  Throughput: 39.7 tok/s
+  Response  :
+    When optimizing a model for real-time perception on an edge device, several key factors come into play to ensure that the model performs efficiently and meets the requirements of real-time application...
+
+============================================================
+  Loading INT8
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:10,  3.51s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:06<00:06,  3.10s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:09<00:02,  2.97s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:11<00:00,  2.66s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:11<00:00,  2.83s/it]
+Load time : 13.5s
+VRAM      : 8.12 GB
+
+--- Prompt 1/3 ---
+  Explain neural network quantization in simple terms.
+  Tokens    : 200
+  Elapsed   : 19.46s
+  Throughput: 10.3 tok/s
+  Response  :
+    Sure! Neural network quantization is a technique used to make neural networks smaller and faster without significantly reducing their performance. Here’s a simple explanation:
+
+Imagine you have a big,...
+
+--- Prompt 2/3 ---
+  Describe the trade-off between memory usage, latency, and output quality in depl...
+  Tokens    : 200
+  Elapsed   : 19.59s
+  Throughput: 10.2 tok/s
+  Response  :
+    In deployment-oriented machine learning systems, there is often a trade-off between memory usage, latency, and output quality. These three factors are interrelated and optimizing one can sometimes com...
+
+--- Prompt 3/3 ---
+  You are optimizing a model for real-time perception on an edge device. Explain w...
+  Tokens    : 200
+  Elapsed   : 19.38s
+  Throughput: 10.3 tok/s
+  Response  :
+    When optimizing a model for real-time perception on an edge device, several factors need to be considered to ensure that the model performs efficiently and meets the requirements of low latency and hi...
+
+============================================================
+  Loading NF4 4-bit
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:02<00:06,  2.29s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:05<00:05,  2.60s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:07<00:02,  2.71s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:10<00:00,  2.51s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:10<00:00,  2.54s/it]
+Load time : 10.6s
+VRAM      : 5.19 GB
+
+--- Prompt 1/3 ---
+  Explain neural network quantization in simple terms.
+  Tokens    : 200
+  Elapsed   : 8.79s
+  Throughput: 22.8 tok/s
+  Response  :
+    Sure! Neural network quantization is a technique used to make deep learning models smaller and faster without significantly compromising their accuracy. Here’s a simple explanation:
+
+Imagine you have ...
+
+--- Prompt 2/3 ---
+  Describe the trade-off between memory usage, latency, and output quality in depl...
+  Tokens    : 200
+  Elapsed   : 8.64s
+  Throughput: 23.2 tok/s
+  Response  :
+    In deployment-oriented machine learning systems, there is often a trade-off between memory usage, latency, and output quality. These three factors are interrelated and optimizing one can sometimes com...
+
+--- Prompt 3/3 ---
+  You are optimizing a model for real-time perception on an edge device. Explain w...
+  Tokens    : 200
+  Elapsed   : 8.69s
+  Throughput: 23.0 tok/s
+  Response  :
+    Optimizing a model for real-time perception on an edge device involves several key steps to ensure that the model can operate efficiently with minimal delay while maintaining acceptable accuracy. Quan...
+Results saved to results/results.json
+
+--- Benchmark Summary ---
+Precision  VRAM (GB)  Avg Throughput (tok/s)  Load Time (s)
+     BF16  14.188610               39.662832       3.870383
+     INT8   8.121646               10.269103      13.507545
+NF4 4-bit   5.185545               22.973690      10.629298
+Plot saved to results/benchmark_results.png

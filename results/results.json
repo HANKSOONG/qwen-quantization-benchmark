@@ -1,0 +1,86 @@
+[
+  {
+    "precision": "BF16",
+    "load_time_s": 3.8703834309708327,
+    "vram_gb": 14.188609600067139,
+    "prompts": [
+      {
+        "prompt": "Explain neural network quantization in simple terms.",
+        "n_tokens": 200,
+        "elapsed_s": 5.048496723873541,
+        "tokens_per_sec": 39.6157531516722,
+        "response_preview": "Sure! Neural network quantization is a technique used to make neural networks smaller and faster without significantly compromising their performance. Here\u2019s a simple explanation:\n\nImagine you have a big, colorful painting with lots of different shades of colors. Now, instead of using all those diff"
+      },
+      {
+        "prompt": "Describe the trade-off between memory usage, latency, and output quality in deployment-oriented machine learning systems.",
+        "n_tokens": 200,
+        "elapsed_s": 5.041625014040619,
+        "tokens_per_sec": 39.66974922629354,
+        "response_preview": "In deployment-oriented machine learning systems, there is often a trade-off between memory usage, latency, and output quality. These three factors are interrelated and optimizing one can sometimes come at the cost of another. Here's a detailed look at each factor and how they interact:\n\n1. **Memory "
+      },
+      {
+        "prompt": "You are optimizing a model for real-time perception on an edge device. Explain why quantization, profiling, and latency measurement matter.",
+        "n_tokens": 200,
+        "elapsed_s": 5.0374033488333225,
+        "tokens_per_sec": 39.70299500561546,
+        "response_preview": "When optimizing a model for real-time perception on an edge device, several key factors come into play to ensure that the model performs efficiently and meets the requirements of real-time applications. Quantization, profiling, and latency measurement are crucial aspects of this optimization process"
+      }
+    ]
+  },
+  {
+    "precision": "INT8",
+    "load_time_s": 13.507544970139861,
+    "vram_gb": 8.121646404266357,
+    "prompts": [
+      {
+        "prompt": "Explain neural network quantization in simple terms.",
+        "n_tokens": 200,
+        "elapsed_s": 19.455706784967333,
+        "tokens_per_sec": 10.2797601860721,
+        "response_preview": "Sure! Neural network quantization is a technique used to make neural networks smaller and faster without significantly reducing their performance. Here\u2019s a simple explanation:\n\nImagine you have a big, colorful painting with lots of different shades of colors. Now, instead of using all those shades, "
+      },
+      {
+        "prompt": "Describe the trade-off between memory usage, latency, and output quality in deployment-oriented machine learning systems.",
+        "n_tokens": 200,
+        "elapsed_s": 19.591233533108607,
+        "tokens_per_sec": 10.20864764140583,
+        "response_preview": "In deployment-oriented machine learning systems, there is often a trade-off between memory usage, latency, and output quality. These three factors are interrelated and optimizing one can sometimes come at the cost of another. Here\u2019s a detailed look at each factor and how they interact:\n\n### 1. Memor"
+      },
+      {
+        "prompt": "You are optimizing a model for real-time perception on an edge device. Explain why quantization, profiling, and latency measurement matter.",
+        "n_tokens": 200,
+        "elapsed_s": 19.381910386960953,
+        "tokens_per_sec": 10.318900253225225,
+        "response_preview": "When optimizing a model for real-time perception on an edge device, several factors need to be considered to ensure that the model performs efficiently and meets the requirements of low latency and high throughput. Quantization, profiling, and latency measurement are crucial steps in this process:\n\n"
+      }
+    ]
+  },
+  {
+    "precision": "NF4 4-bit",
+    "load_time_s": 10.62929778196849,
+    "vram_gb": 5.185545444488525,
+    "prompts": [
+      {
+        "prompt": "Explain neural network quantization in simple terms.",
+        "n_tokens": 200,
+        "elapsed_s": 8.787287272047251,
+        "tokens_per_sec": 22.760152685141957,
+        "response_preview": "Sure! Neural network quantization is a technique used to make deep learning models smaller and faster without significantly compromising their accuracy. Here\u2019s a simple explanation:\n\nImagine you have a big collection of toys (these represent the weights and biases in a neural network). These toys co"
+      },
+      {
+        "prompt": "Describe the trade-off between memory usage, latency, and output quality in deployment-oriented machine learning systems.",
+        "n_tokens": 200,
+        "elapsed_s": 8.63700960506685,
+        "tokens_per_sec": 23.15616273978336,
+        "response_preview": "In deployment-oriented machine learning systems, there is often a trade-off between memory usage, latency, and output quality. These three factors are interrelated and optimizing one can sometimes come at the expense of another. Let's explore each of these factors and how they interact with each oth"
+      },
+      {
+        "prompt": "You are optimizing a model for real-time perception on an edge device. Explain why quantization, profiling, and latency measurement matter.",
+        "n_tokens": 200,
+        "elapsed_s": 8.693854572949931,
+        "tokens_per_sec": 23.004755637652398,
+        "response_preview": "Optimizing a model for real-time perception on an edge device involves several key steps to ensure that the model can operate efficiently with minimal delay while maintaining acceptable accuracy. Quantization, profiling, and latency measurement are crucial aspects of this optimization process. Here'"
+      }
+    ]
+  }
+]
