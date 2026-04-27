@@ -52,7 +52,9 @@ Quantization/
 
 ### 1. Output quality is largely preserved after quantization
 
-All three precision levels produced semantically coherent and factually consistent answers to every prompt. A representative comparison for the prompt *"Explain neural network quantization in simple terms"*:
+All three precision levels produced semantically coherent and factually consistent answers to all prompts.
+
+A representative comparison for the prompt *"Explain neural network quantization in simple terms"*:
 
 | Precision | Response excerpt |
 |-----------|-----------------|
@@ -60,7 +62,7 @@ All three precision levels produced semantically coherent and factually consiste
 | INT8      | "...without significantly **reducing** their performance..."    |
 | NF4 4-bit | "...without significantly compromising their **accuracy**..."   |
 
-The wording varies slightly but the meaning is identical. This is expected: quantization introduces small numerical errors per weight ($W_{quant} = \text{round}(W/s) \times s$), and these errors accumulate through the 28 transformer layers, occasionally shifting which token ranks highest in logit space. Once a single token diverges, the rest of the generation follows a different (but equally valid) path — a classic **butterfly effect in autoregressive decoding**. No semantic degradation was observed in any of the 9 inference runs.
+The wording varies slightly, but the meaning is identical. This indicates that quantization introduces tiny data errors into each weight, and these errors can occasionally change the highest-ranking token. No semantic degradation was observed in any of the 9 inference runs.
 
 ### 2. Why is INT8 *slower* than NF4 — despite being higher precision?
 
@@ -77,7 +79,7 @@ This is counterintuitive and worth explaining:
 - The actual compute is a standard, dense BF16 GEMM — which benefits from A6000's full BF16 tensor core throughput.
 - No branching, no mixed paths.
 
-In short: **INT8's memory saving comes at a runtime branching cost; NF4 dequantizes cheaply and then runs fast BF16 compute**. The bitsandbytes INT8 backend is designed for memory-constrained scenarios, not throughput.
+In INT8, bitsandbytes handles the outlier part separately with higher precision, introducing additional branches, memory accesses, and kernel scheduling; while NF4 has lower weights and a more direct path. Therefore, the running speed is: BF16 > INT8 > NF4.
 
 ---
 
